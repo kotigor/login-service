@@ -1,0 +1,25 @@
+<html>
+<body>
+<form method="GET"
+      action="http://51.250.105.251:31441/feed/">
+    <input type="text" name="text">
+    <input type="file" name="files" multiple>
+    <input type="submit" value="Upload"> Press here to upload the file!
+</form>
+</body>
+<script>
+    function send(){
+        let formdata = new FormData(document.querySelector("form"));
+        fetch("http://51.250.105.251:31441/feed/create", {method:"post", headers: {
+                'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4T2pWOFFtYWh5M1lmYzNqWEhVR3hLUkN5WktNal82ZFBheWMzeUdFZkZjIn0.eyJleHAiOjE2NTQ3MjUzMDMsImlhdCI6MTY1NDY4OTMwMywianRpIjoiZmQxNzI5ZDEtNTMzOS00NGZhLWFhYTEtODJhZDE2MTg3NjBmIiwiaXNzIjoiaHR0cDovLzUxLjI1MC4xMDUuMjUxOjMxNDQxL2F1dGgvcmVhbG1zL2luc3RhIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQ5YjhjMmJiLTY5Y2UtNGM1My04ZTRkLTU2MTBiMmEwMjk0YSIsInR5cCI6IkJlYXJlciIsImF6cCI6Imluc3RhIiwic2Vzc2lvbl9zdGF0ZSI6IjNiYWUyY2VmLTIzYTktNGU0Ny04MDQzLTY0MGJhZjA0NDA5OSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtaW5zdGEiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInVzZXIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJzaWQiOiIzYmFlMmNlZi0yM2E5LTRlNDctODA0My02NDBiYWYwNDQwOTkiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJzdHJpbmcgc3RyaW5nIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic3RyaW5nIiwiZ2l2ZW5fbmFtZSI6InN0cmluZyIsImZhbWlseV9uYW1lIjoic3RyaW5nIiwiZW1haWwiOiJ0ZXN0QGdtYWlsLmNvbSJ9.CofWYyyO9HDVMPlhSxNHJw9fvoC_w9e_5aE4pLH19PX95vPL8sVzZbj44DSWrBNe3cLAPlr4JhlomZNk3ooIQSISSfXMYzxNdTbsA6ERqpJe6TSndy7oJ4uDB-eWLIN6J8-qX-qP2_WYTg59RQyeDjlhCIdVa8qLayUxBfY5UJe66ymGle3k1L4PbnMi745A6qZeDcayBOw2Eyhoj2DzwiJbAQUtcr1jFThgYFdJelHKQKSHSl14MfXxVU7YAybUGcKlm0q5D6dddc_Fv1McdbLVwIfx1KbF1bpbV1VovUY_gZu49J-3FFLcPsovTT5dOKbQKsskUB_XbWQSdcugIw'
+            }, body:formdata});
+
+    }
+
+    document.querySelector("form").addEventListener('submit', (e) => {
+        e.preventDefault();
+        send();
+    });
+
+</script>
+</html>
